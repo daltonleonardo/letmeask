@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useState, ButtonHTMLAttributes } from "react";
 
-type ButtonProps = {
+import '../styles/button.scss';
+
+type ButtonPropsExample = {
     text?: string;
     children?: string;
 }
 
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
 export function Button(props: ButtonProps) {
+
+    return (
+        <button className= "button" {...props}/>
+    )
+}
+
+export function ButtonExample(props: ButtonPropsExample) {
 
     return (
         <button>{props.children || props.text || 'Default' }</button>
